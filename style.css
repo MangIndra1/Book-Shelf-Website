@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+    --primary-color: #5F30E2;
+    --primary-light: #9475ea;
+    --primary-bg: #f5f1ff;
+    --danger-color: #dc3545;
+    --danger-hover: #c82333;
+    --text-color: #333;
+    --text-secondary: #666;
+    --bg-color: #f8f9fa;
+    --bg-light: white;
+    --border-color: #ddd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color); 
+}
+
+main {
+    padding: 16px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+header {
+    background: var(--primary-color);
+    padding: 16px;
+    color: var(--bg-light);
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+section {
+    background: var(--bg-light);
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, .05), 0 15px 40px rgba(166, 173, 201, .2);
+}
+
+h2 {
+    color: var(--text-color);
+}
+
+#bookForm, #searchBook {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#bookForm > div, #searchBook > div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #555;
+}
+
+input[type="text"], input[type="number"] {
+    font-family: 'Raleway', sans-serif;
+    background: var(--primary-bg);
+    border: 2px solid var(--primary-light);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#bookForm > div:has(input[type="checkbox"]) {
+    flex-direction: row;
+    align-items: center;
+}
+
+button {
+    font-family: 'Raleway', sans-serif;
+    border-radius: 8px;
+    padding: 12px 24px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#bookFormSubmit, #searchSubmit {
+    background-color: var(--primary-color);
+    color: var(--bg-light);
+    align-self: flex-end; 
+}
+
+#bookFormSubmit:hover, #searchSubmit:hover {
+    background-color: #4a25b1;
+}
+
+/* Tombol di dalam item buku */
+[data-testid="bookItem"] button {
+    background-color: #eee;
+    color: var(--text-color);
+    margin-right: 8px;
+    border: 1px solid var(--border-color);
+}
+
+[data-testid="bookItem"] [data-testid="bookItemDeleteButton"] {
+    background-color: var(--danger-color);
+    color: var(--bg-light);
+    border: none;
+}
+
+[data-testid="bookItem"] [data-testid="bookItemDeleteButton"]:hover {
+    background-color: var(--danger-hover);
+}
+
+[data-testid="bookItem"] {
+    border-radius: 8px;
+    margin-top: 16px;
+    padding: 16px;
+    background: var(--bg-color);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+[data-testid="bookItemTitle"] {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+[data-testid="bookItemAuthor"], [data-testid="bookItemYear"] {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 1024px) {
+    main {
+        width: 100%;
+        padding: 8px;
+    }
+}
